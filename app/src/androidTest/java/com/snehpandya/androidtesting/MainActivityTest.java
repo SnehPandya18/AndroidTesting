@@ -8,6 +8,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import static android.support.test.espresso.Espresso.onView;
+import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.action.ViewActions.closeSoftKeyboard;
 import static android.support.test.espresso.action.ViewActions.typeText;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
@@ -32,5 +33,7 @@ public class MainActivityTest {
     @Test
     public void ensureTypeTextLaunchActivity() {
         onView(withId(R.id.et_hello)).perform(typeText("Oreo"), closeSoftKeyboard());
+        onView(withId(R.id.btn_next)).perform(click());
+        onView(withId(R.id.text_result)).check(matches(withText("Oreo")));
     }
 }
