@@ -12,8 +12,12 @@ import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.action.ViewActions.closeSoftKeyboard;
 import static android.support.test.espresso.action.ViewActions.typeText;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
+import static android.support.test.espresso.matcher.RootMatchers.withDecorView;
+import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.core.IsNot.not;
 
 /**
  * Created by sneh.pandya on 24/10/17.
@@ -35,5 +39,12 @@ public class MainActivityTest {
         onView(withId(R.id.et_hello)).perform(typeText("Oreo"), closeSoftKeyboard());
         onView(withId(R.id.btn_next)).perform(click());
         onView(withId(R.id.text_result)).check(matches(withText("Oreo")));
+    }
+
+    @Test
+    public void ensureCheckBoxWithToast() {
+        ensureTypeTextLaunchActivity();
+        onView(withId(R.id.checkbox_toast)).perform(click());
+        onView(withText("Oreo")).inRoot(withDecorView(not(is(mMainActivityTestRule.getActivity().getWindow().getDecorView())))).check(matches(isDisplayed()));
     }
 }
