@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">AndroidTesting</string>
+    <string name="next">next</string>
+    <string name="activity">activity</string>
+    <string name="recyclerview">recyclerview</string>
+    <string name="toast">Toast</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="name">Name</string>
+    <string name="drawer_open">Drawer open</string>
+    <string name="drawer_close">Drawer close</string>
+    <string name="hello_fragment">Hello Fragment!</string>
+    <string name="listview">listview</string>
 </resources>
