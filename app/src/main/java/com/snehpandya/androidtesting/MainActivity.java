@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button mButton2;
     private Button mButton3;
     private Button mButton4;
+    private Button mButton5;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,14 +28,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mEditText = (EditText) findViewById(R.id.et_hello);
         mButton1 = (Button) findViewById(R.id.btn_next);
         mButton2 = (Button) findViewById(R.id.btn_activity);
-        mButton3 = (Button) findViewById(R.id.btn_listview);
-        mButton4 = (Button) findViewById(R.id.btn_recyclerview);
+        mButton3 = (Button) findViewById(R.id.btn_fragment);
+        mButton4 = (Button) findViewById(R.id.btn_listview);
+        mButton5 = (Button) findViewById(R.id.btn_recyclerview);
 
         mTextView.setText("Hello Android!");
         mButton1.setOnClickListener(this);
         mButton2.setOnClickListener(this);
         mButton3.setOnClickListener(this);
         mButton4.setOnClickListener(this);
+        mButton5.setOnClickListener(this);
     }
 
     @Override
@@ -47,13 +50,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Intent intent1 = new Intent(MainActivity.this, ThirdActivity.class);
                 startActivity(intent1);
                 break;
-            case R.id.btn_listview:
-                Intent intent2 = new Intent(MainActivity.this, FourthActivity.class);
+            case R.id.btn_fragment:
+                Intent intent2 = new Intent(MainActivity.this, FragmentActivity.class);
                 startActivity(intent2);
                 break;
-            case R.id.btn_recyclerview:
-                Intent intent3 = new Intent(MainActivity.this, FifthActivity.class);
+            case R.id.btn_listview:
+                Intent intent3 = new Intent(MainActivity.this, FourthActivity.class);
                 startActivity(intent3);
+                break;
+            case R.id.btn_recyclerview:
+                Intent intent4 = new Intent(MainActivity.this, FifthActivity.class);
+                startActivity(intent4);
                 break;
         }
     }

@@ -11,4 +11,5 @@
     <string name="drawer_close">Drawer close</string>
     <string name="hello_fragment">Hello Fragment!</string>
     <string name="listview">listview</string>
+    <string name="fragment">fragment</string>
 </resources>
