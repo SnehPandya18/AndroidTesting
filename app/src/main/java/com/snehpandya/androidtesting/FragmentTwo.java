@@ -13,28 +13,13 @@ import android.view.ViewGroup;
 
 public class FragmentTwo extends Fragment {
 
-    private String title;
-    private int page;
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_two, container, false);
     }
 
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        page = getArguments().getInt("someInt", 1);
-        title = getArguments().getString("someTitle");
-    }
-
-    public static FragmentTwo newInstance(int page, String title) {
-        FragmentTwo fragmentTwo = new FragmentTwo();
-        Bundle args = new Bundle();
-        args.putInt("someInt", page);
-        args.putString("someTitle", title);
-        fragmentTwo.setArguments(args);
-        return fragmentTwo;
+    public static FragmentTwo newInstance() {
+        return new FragmentTwo();
     }
 }
