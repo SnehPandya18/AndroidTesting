@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button mButton3;
     private Button mButton4;
     private Button mButton5;
+    private Button mButton6;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +32,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mButton3 = (Button) findViewById(R.id.btn_fragment);
         mButton4 = (Button) findViewById(R.id.btn_listview);
         mButton5 = (Button) findViewById(R.id.btn_recyclerview);
+        mButton6 = (Button) findViewById(R.id.btn_viewpager);
 
         mTextView.setText("Hello Android!");
         mButton1.setOnClickListener(this);
@@ -38,6 +40,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mButton3.setOnClickListener(this);
         mButton4.setOnClickListener(this);
         mButton5.setOnClickListener(this);
+        mButton6.setOnClickListener(this);
     }
 
     @Override
@@ -62,6 +65,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Intent intent4 = new Intent(MainActivity.this, FifthActivity.class);
                 startActivity(intent4);
                 break;
+            case R.id.btn_viewpager:
+                Intent intent5 = new Intent(MainActivity.this, SixthActivity.class);
+                startActivity(intent5);
         }
     }
 
