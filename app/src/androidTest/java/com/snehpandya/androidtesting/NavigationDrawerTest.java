@@ -26,7 +26,11 @@ public class NavigationDrawerTest {
     @Test
     public void launchSecondActivity() {
         onView(withId(R.id.btn_activity)).perform(click());
+
+        //Open Navigation Drawer
         onView(withId(R.id.drawer)).perform(DrawerActions.open());
+
+        //Perform Navigation Drawer actions
         onView(withId(R.id.navigationview)).perform(NavigationViewActions.navigateTo(R.id.two));
     }
 }

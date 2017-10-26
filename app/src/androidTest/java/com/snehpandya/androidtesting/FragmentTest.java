@@ -24,6 +24,8 @@ public class FragmentTest {
     @Test
     public void launchFragmentTwo() {
         onView(withId(R.id.btn_fragment)).perform(click());
+
+        //Perform fragment transition
         onView(withId(R.id.change_fragment)).perform(click());
     }
 }

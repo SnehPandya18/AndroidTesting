@@ -25,7 +25,11 @@ public class RecyclerViewTest {
     @Test
     public void testRecyclerView() {
         onView(withId(R.id.btn_recyclerview)).perform(click());
+
+        //Click at specified position
         onView(withId(R.id.recyclerview)).perform(RecyclerViewActions.actionOnItemAtPosition(3, click()));
+
+        //Scroll to specified position
         onView(withId(R.id.recyclerview)).perform(RecyclerViewActions.scrollToPosition(25));
     }
 }

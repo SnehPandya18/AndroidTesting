@@ -12,4 +12,5 @@
     <string name="hello_fragment">Hello Fragment!</string>
     <string name="listview">listview</string>
     <string name="fragment">fragment</string>
+    <string name="viewpager">viewpager</string>
 </resources>

@@ -31,12 +31,15 @@ public class MainActivityTest {
 
     @Test
     public void ensureTextView() {
+        //Check text inside TextView
         onView(withId(R.id.text_hello)).check(matches(withText("Hello Android!")));
     }
 
     @Test
     public void ensureTypeTextLaunchActivity() {
         onView(withId(R.id.et_hello)).perform(typeText("Oreo"), closeSoftKeyboard());
+
+        //Button click
         onView(withId(R.id.btn_next)).perform(click());
         onView(withId(R.id.text_result)).check(matches(withText("Oreo")));
     }
@@ -45,6 +48,8 @@ public class MainActivityTest {
     public void ensureCheckBoxWithToast() {
         ensureTypeTextLaunchActivity();
         onView(withId(R.id.checkbox_toast)).perform(click());
+
+        //Check Toast
         onView(withText("Oreo")).inRoot(withDecorView(not(is(mMainActivityTestRule.getActivity().getWindow().getDecorView())))).check(matches(isDisplayed()));
     }
 }
